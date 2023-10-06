@@ -298,6 +298,7 @@ func caculateGSM(distance:Double) {
 }
 
 func main(){
+    var distance:Double = -1
     while true {
         print("""
             ==================================
@@ -314,11 +315,13 @@ func main(){
                 print("Giá trị không hợp lệ")
                 continue
             }
+            distance = enterDistance()
+            if distance == -1 {
+                print("Giá trị không hợp lệ.")
+                continue
+            }
         }
-        let distance = enterDistance()
-        if distance == -1 {
-            print("Giá trị không hợp lệ.")
-        }
+        
         switch chooseCompany(){
         case 1:
             caculateMaiLinh(distance: distance)
@@ -335,7 +338,7 @@ func main(){
         case 7:
             caculateGSM(distance: distance)
         default:
-            print("Giá trị không hợp lệ")
+            print("Giá trị không hợp lệ.")
         }
     }
 }
